@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+  </head>
+  <body class="bg-slate-800">
+    <nav
+      class="w-[100vw] h-12 px-4 bg-slate-900 text-white flex items-center justify-between"
+    >
+      <div><h2>Flask shop</h2></div>
+
+      <div class="flex gap-3 items-center">
+        <a class="cursor-pointer hover:text-lg" href="{{ url_for('home') }}"
+          >Home</a
+        >
+        <a class="cursor-pointer hover:text-lg" href="{{ url_for('market') }}"
+          >Market</a
+        >
+      </div>
+
+      <div class="flex gap-3 items-center">
+        <p class="cursor-pointer hover:text-lg">Login</p>
+        <p class="cursor-pointer hover:text-lg">Register</p>
+      </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+  </body>
+</html>
